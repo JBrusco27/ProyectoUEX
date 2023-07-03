@@ -1,0 +1,27 @@
+/* FOOTER */
+
+footer{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    bottom: 0;
+    position: absolute;
+    background-color:var(--color-verde-oscuro);
+}   
+
+p{
+    color: var(--color-verde-claro);
+}
+
+@media  screen and (max-width:700px)  {
+    p{
+        font-size: 0.8rem;
+    }
+    footer{
+        position: relative;
+    }
+
+}
+
+/* FOOTER */
