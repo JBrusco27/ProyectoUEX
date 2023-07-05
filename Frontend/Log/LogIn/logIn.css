@@ -23,7 +23,7 @@ h3{
 form{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    min-width: 30%;
     gap: 1rem;
 }
 
@@ -179,6 +179,12 @@ form{
 .input-show-pswd-div{
     display: flex;
     position: relative;
+}
+
+@media screen and (max-width:1300px) {
+    form{
+        width: 50%;
+    }
 }
 
 @media screen and (max-width:900px) {

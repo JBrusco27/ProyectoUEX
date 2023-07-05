@@ -42,16 +42,18 @@ input[type=button],input[type=submit]{
     min-height: 83vh;
     border-radius: 50px 50px 0 0;
     position: relative;
+    overflow: hidden;
 }
 
 .container-content{
     padding:4% 8% 8% 8%;
+    margin-bottom: 3.5rem;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
-}   
+}
 
 /*Container default*/
 
@@ -66,7 +68,6 @@ form{
     display: flex;
     flex-direction: row;
     align-items:center;
-    height: fit-content;
     gap: 0.5rem;
     width: 100%;
     border: 1px #c3c3c36b solid; 
@@ -117,9 +118,7 @@ option{
 }
 
 .submitBtn{
-    align-self:end;
-    width: 4rem;
-    height: 64px;
+    width: 20%;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -233,6 +232,18 @@ option{
     right: 0 !important;
 }
 
+@media screen and (max-width:1300px){
+    .schedules-form-div{
+        width: 100%;
+    }
+    .submitBtn{
+        max-width: 70px;
+    }
+    .form-div{
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width:700px){
     .container-content{
         padding: 8%;
@@ -251,15 +262,8 @@ option{
         align-items: center;
         gap: 1rem;
     }
-    .form-div{
-        flex-direction: column;
-    }
-    .submitBtn{
-        width: 50%;
-    }
     .schedules-form-div{
         width: 100%;
-        flex-direction: column;
     }
 }
 

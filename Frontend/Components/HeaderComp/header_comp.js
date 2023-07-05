@@ -43,5 +43,16 @@ document.addEventListener('DOMContentLoaded', function() {
             active2 = true;
         }
     });  
+    document.querySelector("#nav-close-icon").addEventListener('click', function() {
+        if (active2) {
+        document.querySelector("#wrap-container").classList.add("wrap-container-active");
+        document.querySelector(".container").style.borderRadius = "50px";
+        active2 = false;
+        } else {
+            document.querySelector(".container").style.borderRadius = "";
+            document.querySelector("#wrap-container").classList.remove("wrap-container-active");
+            active2 = true;
+        }
+    });  
 
   });   

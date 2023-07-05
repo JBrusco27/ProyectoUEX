@@ -37,3 +37,7 @@ html::-webkit-scrollbar-thumb{
     text-decoration: none;
     outline: none;
 }
+
+input[type="button"],input[type="submit"],button{
+    cursor: pointer;
+}
