@@ -5,7 +5,7 @@ header{
     position: relative;
     inset: 0;
     padding: 1.8rem 1%;
-    height: auto;
+    height:7.5rem;
     display: flex;
     justify-content: space-between;
 }    
@@ -54,7 +54,7 @@ header{
     box-shadow: var(--box-shadow-1);
     margin: 1.1rem 2rem;
     background-color: white;
-    width:10.2rem;
+    width: fit-content;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -62,12 +62,7 @@ header{
     border-radius: 30px;
     height: auto;
     cursor: pointer;
-    padding: 0.2rem;
     box-sizing: border-box; 
-}
-
-.preferences-dropdown-content:hover{
-    width: 11rem;
 }
 
 .preferences-dropdown-content-view{
@@ -75,28 +70,38 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.2rem;
+    gap: 1rem;
 }
 
 .preferences-dropdown-content-action{
     display: none;
-    margin: 1rem;
+    width: 100%;
+    padding: 1rem 0;
+    box-sizing: border-box;
 }
 
 .preferences-dropdown-content-action div{
     margin-bottom: 0.5rem;
+    padding:0.5rem  1rem;
+    display: flex;
+    align-items: center;
+}
+
+.preferences-dropdown-content-action div:hover{
+    background-color: whitesmoke;
 }
 
 .action-icon{
     font-size: 1.2rem;
     z-index: 0;
-    right: 0.7rem;
     position: relative;
 }
 
-.preferences-dropdown-content-action div a{
-    text-decoration: none;
+.preferences-dropdown-content-action div{
     align-items: center;
     display: flex;
+    gap: 15px;
 }
 
 .preferences-dropdown-profile-img{
@@ -133,17 +138,9 @@ header{
     transform: rotate(180deg);
 }
 
-.wrap-container-active{
-    transform:scaleY(0.8)scaleX(0.7)translateX(60%);
-    border-radius: 50px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.538);
-}
-
-.wrap-container{
-    transition: all 0.6s;
-    
-    overflow: hidden;
-    background-color: whitesmoke;
+.preferences-dropdown-profile-name{
+    font-weight: 700;
+    color: var(--color-verde-oscuro);
 }
 
 @media screen and (max-width:1050px){
@@ -170,23 +167,25 @@ header{
         display: inline-block;
     }
     header{
-        height: 73px;
+        height: 110px;
         padding: 1rem;
     }
-    
-    .preferences-dropdown-container {
-        position:   absolute;   
-    }
+
     .nav-container{
         gap: 12%;
         align-items: center;
         justify-content: left;
         padding-left: 2rem;
     }
+    
+    .preferences-dropdown-container {
+        position: absolute;   
+    }
+
     .preferences-dropdown-content{
-        margin: 1rem 3.3rem;
+        margin: 1rem 1rem;
         border-radius: 20px;
-        width: 67px;
+        width: fit-content;
         padding: 0;
     }
     
@@ -196,13 +195,14 @@ header{
         position: relative;
     }
     
-    .preferences-dropdown-content:hover{
-        width: 6.5rem;
-    }
-    
     .nav-elements{
         display: none;
     }
+
+    
+.preferences-dropdown-content-view{
+    gap: 0.7rem;
+}
     
 }
 

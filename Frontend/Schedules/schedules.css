@@ -36,22 +36,50 @@ input[type=button],input[type=submit]{
 
 /*Container default*/
 
-.container{
+.page-title{
+    position: absolute;
+    color: var(--color-verde-oscuro);
+    padding: 0 8%;
+    font-weight: 600;
+    font-size: 40px;
+    transform: translateY(-3.3rem);
+}
+
+.container {
     background-color: var(--color-verde-oscuro);
-    margin-top: 8vh;
-    min-height: 83vh;
+    margin-top: 20vh;
+    inset: 0;
     border-radius: 50px 50px 0 0;
-    position: relative;
+    position: absolute;
+    overflow-y: auto;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .container-content{
-    padding:4% 8% 8% 8%;
+    padding:4% 8%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
-}   
+    height: max-content;
+}
+
+.wrap-container-active{
+    transform:scaleY(0.8)scaleX(0.7)translateX(60%);
+    border-radius: 50px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.538);
+}
+
+.wrap-container {
+    transition: all 0.6s;
+    overflow: hidden;
+    background-color: whitesmoke;
+    position: absolute;
+    inset: 0;
+}
 
 /*Container default*/
 
@@ -66,7 +94,6 @@ form{
     display: flex;
     flex-direction: row;
     align-items:center;
-    height: fit-content;
     gap: 0.5rem;
     width: 100%;
     border: 1px #c3c3c36b solid; 
@@ -117,9 +144,7 @@ option{
 }
 
 .submitBtn{
-    align-self:end;
-    width: 4rem;
-    height: 64px;
+    width: 20%;
     border-radius: 10px;
     outline: none;
     border: none;
@@ -233,6 +258,18 @@ option{
     right: 0 !important;
 }
 
+@media screen and (max-width:1300px){
+    .schedules-form-div{
+        width: 100%;
+    }
+    .submitBtn{
+        max-width: 70px;
+    }
+    .form-div{
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width:700px){
     .container-content{
         padding: 8%;
@@ -251,15 +288,8 @@ option{
         align-items: center;
         gap: 1rem;
     }
-    .form-div{
-        flex-direction: column;
-    }
-    .submitBtn{
-        width: 50%;
-    }
     .schedules-form-div{
         width: 100%;
-        flex-direction: column;
     }
 }
 
