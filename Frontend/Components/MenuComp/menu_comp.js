@@ -30,8 +30,7 @@ if (active2) {
 
 function handleResize() {
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  
-    console.log("Ancho de pantalla: " + screenWidth);
+    
     if(screenWidth < 700){
         document.querySelector(".wrap-container").style.height="";        
         document.querySelector(".menu-container").style.display="none"; 

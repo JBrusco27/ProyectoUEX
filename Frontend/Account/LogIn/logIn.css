@@ -6,13 +6,16 @@
 
 /* BODY */
 .container{
+    overflow: hidden;
+    position: fixed;
     inset: 0;
-    position: absolute;
+    height: 0;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
+    z-index:1000000;
 }  
 
 h3{
@@ -77,6 +80,7 @@ form{
     width: 100%;
     gap: 0;
     outline: none;
+    position: relative;
 }
 
 .submitBtn{
@@ -185,6 +189,7 @@ form{
         width: 50%;
     }
 }
+
 @media screen and (max-width:900px) {
     form{
         width: 70%;

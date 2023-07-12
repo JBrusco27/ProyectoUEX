@@ -1,14 +1,11 @@
 /* FOOTER */
 
-footer{
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    box-sizing: border-box;
+footer {
+    position: relative;
     bottom: 0;
-    position: absolute;
-    background-color:var(--color-verde-oscuro);
-}   
+    text-align: center;
+    padding: 1.5rem;
+}
 
 p{
     color: var(--color-verde-claro);
