@@ -25,8 +25,8 @@
     <?php include "../Components/MenuComp/menu_comp.php" ?>
     <section id="wrap-container" class="wrap-container">
         <?php include "../Components/HeaderComp/header_comp.php" ?>
+        <h3 class="page-title Trad2"></h3>
         <section class="container">
-            <h3 class="page-title Trad2"></h3>
             <div class="container-content">
                 <img class="container-content-img" src="../Resources/UruguayExpressLogoNoBack.png" alt="">
                 <h2 class="Trad3"></h2>

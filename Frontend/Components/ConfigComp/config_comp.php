@@ -4,20 +4,22 @@
     </div>
     <div class="config-content">
         <aside>
-            <div class="config-aside-item">
+            <div class="config-aside-item" id="config-aside-item-theme">
                 Theme
             </div>
-            <div class="config-aside-item">
+            <div class="config-aside-item" id="config-aside-item-language">
                 Language
             </div>
-            <div class="config-aside-item">
+            <div class="config-aside-item" id="config-aside-item-account">
                 Account
             </div>
         </aside>
         <section class="config-right-side">
-            <div class="theme-right-side"></div>
-            <div class="language-right-side">
-                <h1 class="language-title">Select a language</h1>
+            <div class="theme-right-side right-side-item">
+                <h1 class="right-side-title">Select a theme</h1>
+            </div>
+            <div class="language-right-side right-side-item">
+                <h1 class="right-side-title">Select a language</h1>
                 <div class="language-content">
                     <div class="language-item" id="spanishTranslateAction">
                         <img src="../Resources/Language/espana.png" class="language-img" alt="CountryImg">
@@ -36,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="account-right-side"></div>
+            <div class="account-right-side right-side-item"></div>
         </section>
     </div>
 </div>

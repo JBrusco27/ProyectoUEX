@@ -1,5 +1,5 @@
 
-.language-title{
+.right-side-title{
     color: var(--color-verde-claro);
 }
 
@@ -143,6 +143,10 @@ aside{
 
 .language-item:hover{
     width: 95%;
+}
+
+.right-side-item{
+    display: none;
 }
 
 @media screen and (max-width:1050px){

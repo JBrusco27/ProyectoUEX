@@ -27,7 +27,7 @@ input[type=button],input[type=submit],button{
     padding: 0 8%;
     font-weight: 600;
     font-size: 40px;
-    transform: translateY(-3.3rem);
+    top: 20vh;
 }
 
 .container {
@@ -296,6 +296,10 @@ form div{
 @media screen and (max-width:900px){
     .form-top{
         flex-direction: column;
+    }
+    .page-title{
+        font-size:30px;
+        top: 22vh;
     }
 }
 

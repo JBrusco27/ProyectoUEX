@@ -42,7 +42,7 @@ input[type=button],input[type=submit]{
     padding: 0 8%;
     font-weight: 600;
     font-size: 40px;
-    transform: translateY(-3.3rem);
+    top: 20vh;
 }
 
 .container {
@@ -267,6 +267,13 @@ option{
     }
     .form-div{
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width:900px){
+    .page-title{
+        font-size:30px;
+        top: 22vh;
     }
 }
 

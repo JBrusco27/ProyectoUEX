@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h3>Sign Up</h3>
-        <form id="form" action="">
+        <form id="form" action="consulta_sign_up.php" method="post">
             <div class="form-div">
                 <ion-icon class="form-icon" name="person"></ion-icon>
                 <div class="label-input-div">

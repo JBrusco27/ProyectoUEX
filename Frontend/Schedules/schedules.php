@@ -26,8 +26,8 @@
     <?php include "../Components/MenuComp/menu_comp.php" ?>
     <section class="wrap-container" id="wrap-container">
         <?php include "../Components/HeaderComp/header_comp.php" ?>
-        <div class="container">
         <h3 class="page-title Trad2"></h3>
+        <div class="container">
             <div class="container-content">
                 <form action="">
                     <div class="schedules-form-div"> 

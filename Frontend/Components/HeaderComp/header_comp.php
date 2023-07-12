@@ -16,7 +16,7 @@
                 <div class="HeadTrad4" id="header-profile-action"><span class="material-symbols-rounded action-icon">person</span></div>
                 <div class="HeadTrad5" id="header-myTickets-action"><span class="material-symbols-rounded action-icon">local_activity</span></div>
                 <div class="HeadTrad6" id="header-config-action"><span class="material-symbols-rounded action-icon">settings</span></div>
-                <a href="../Account/SignUp/signUp.html"><div class="HeadTrad7"><span class="material-symbols-rounded action-icon">login</span></div></a> 
+                <a href="../Account/SignUp/signUp.php"><div class="HeadTrad7"><span class="material-symbols-rounded action-icon">login</span></div></a> 
             </div>
         </div>
         <div class="preferences-dropdown-container-decoration"></div>

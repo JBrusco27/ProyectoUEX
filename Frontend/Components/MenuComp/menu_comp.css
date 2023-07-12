@@ -6,13 +6,16 @@
     position: absolute;
     height: 100vh;
     box-sizing: border-box;
-    width: 55%;
+    width:100%;
+    background-color: var(--color-verde-oscuro);
     align-items: center;
-    
+    opacity: 1;
+    transition: all 0.3s linear;
 }
 
 .menu-content{
     height: 80vh;
+    width: 55%;
 }
 
 h3{

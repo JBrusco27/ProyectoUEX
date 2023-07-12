@@ -1,6 +1,6 @@
-// const configContainer = document.querySelector('.config-container');
-
-// if(window.getComputedStyle(configContainer).getPropertyValue("height") == '100%'){
-//     document.querySelector('html').style.overflow="hidden";
-// }
-
+let active1 = true;
+document.querySelector('#config-aside-item-theme').addEventListener('click', ()=>{
+    if(active1){
+        
+    }
+});

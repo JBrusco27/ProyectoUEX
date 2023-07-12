@@ -22,11 +22,19 @@ if (active2) {
         document.querySelector(".menu-container").style.display="flex";        
         active2 = false;
     }else{
-        document.querySelector(".wrap-container").style.height="";        
-        document.querySelector(".menu-container").style.display="none";        
+        document.querySelector(".wrap-container").style.height="";
+        document.querySelector(".menu-container").style.opacity="0";
+        setTimeout(() => {
+            document.querySelector(".menu-container").style.display="none";        
+            document.querySelector(".menu-container").style.opacity="1";
+        }, 300);        
         active2 = true;
     }
 });
+
+
+
+
 
 function handleResize() {
     var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -45,3 +53,4 @@ function handleResize() {
   handleResize();
 
 });
+

@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('form').addEventListener('submit', (event) => {
       event.preventDefault();
   
-      let nameLastnameTest = new RegExp('^[a-zA-Z]+ [a-zA-Z]+$');
-      let emailTest = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
-      let pswdTest = new RegExp('^[a-zA-Z0-9!@#$%^&*()-_=+]{8,}$');
+      let nameLastnameTest = new RegExp('^[a-zA-Z]+ [a-zA-Z]+{2,40}$');
+      let emailTest = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,40}$');
+      let pswdTest = new RegExp('^[a-zA-Z0-9!@#$%^&*()-_=+]{8,30}$');
       let phoneTest = new RegExp('^\\d+(-\\d+)*$');
   
       let nameLastname = document.getElementById('form-name').value;
