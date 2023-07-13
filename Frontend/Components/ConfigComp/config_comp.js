@@ -1,6 +1,12 @@
-let active1 = true;
-document.querySelector('#config-aside-item-theme').addEventListener('click', ()=>{
-    if(active1){
-        
-    }
+
+document.addEventListener('DOMContentLoaded',()=>{
+
+    
+
+  //Desaparece configuracion
+  document.querySelector('.close-config').addEventListener('click', ()=>{
+    document.querySelector('.config-container').style.height="0";
+    document.querySelector('html').style.overflow="initial";
+  });
+
 });

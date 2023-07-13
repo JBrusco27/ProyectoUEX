@@ -70,11 +70,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     document.querySelector('.config-container').style.height="100%";     
     document.querySelector('html').style.overflow="hidden"; 
   });
-  //Desaparece configuracion
-  document.querySelector('.close-config').addEventListener('click', ()=>{
-    document.querySelector('.config-container').style.height="0";
-    document.querySelector('html').style.overflow="initial";
-  });
 
 
 //Hover al preferences dropdown

@@ -15,76 +15,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-verde-oscuro);
+    background-color: var(--color-verde-oscuro-2);
     z-index: 1000000;
 }
 
 .config-content{
-    min-height: 100%;
+    background-color: var(--color-verde-oscuro);
+    overflow-y: scroll;
+    height: 100%;
+    overflow-x: hidden;
+    width: 60%;
+}
+
+.config-content::-webkit-scrollbar{
+    background-color: var(--color-verde-oscuro-2);
+    width: 8px;
+}
+
+.config-content::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background-color: var(--color-verde-claro);
+}
+
+.right-side-item{
+    padding: 5rem;
     width: 100%;
     display: flex;
-}
-
-aside{
-    padding: 5rem 0 1.5rem 1.5rem;
-    flex-flow: 1;
-    width: 30%;
-    background-color: var(--color-verde-oscuro-2);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    align-items: flex-end;
-}
-
-.config-aside-item{
-    color: var(--color-naranja);
-    font-weight: 400;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 0.5rem 0;
-    padding: 0.4rem;
-    min-width: fit-content;
-    width: 10rem;
-    height: fit-content;
-    position: relative;
-    z-index: 20;
+    flex-direction:column ;
     overflow: hidden;
 }
 
-.config-aside-item::after{
-    transition: all 0.3s ease-in-out;
-    content: "";
-    border-radius: 5px 0 0 5px;
-    background-color: var(--color-verde-oscuro);
-    z-index: -10;
-    position: absolute;
-    inset: 0;
-    transform: translateX(100%);
-}
-
-.config-aside-item:hover::after{
-    transform: translateX(0);
-}
-
-.config-aside-item:hover{
-    width: 12rem;
-    transition-delay: 0.2s;
-    border: 10px 0 0 10px;
-}
-
-.config-right-side{
-    flex: 1;
-}
-
-.language-right-side{
-    padding: 5rem 3rem;
-    width: 75%;
-    height: 100%;
-    display: flex;
-    flex-direction:column ;
-}
-
 .language-item{
+    width: 100%;
+}
+
+.language-item-content{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -93,6 +58,9 @@ aside{
     padding:0.5rem;
     background-color: var(--color-verde-oscuro-2);
     position: relative;
+}
+.language-item:hover > .language-item-content{
+    width: 95%;
 }
 
 .icon{
@@ -141,13 +109,6 @@ aside{
     color: var(--color-verde-oscuro-2);
 }
 
-.language-item:hover{
-    width: 95%;
-}
-
-.right-side-item{
-    display: none;
-}
 
 @media screen and (max-width:1050px){
     .language-right-side{
