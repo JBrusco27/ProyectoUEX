@@ -1,19 +1,25 @@
 <?php
-include_once "connect.php";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "pe3uruguayexpress";
 
-try {
+try 
+{
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
     $nombre_usuario = $_POST['formName'];
     $password_usuario = $_POST['formPswd'];
     $password_usuario_confirm = $_POST['formConfPswd'];
     $correo_usuario = filter_var($_POST['formEmail'], FILTER_SANITIZE_EMAIL);
     $telefono_usuario = filter_var($_POST['formPhone'], FILTER_SANITIZE_NUMBER_INT);
-
     $password_usuario_hashed = password_hash($password_usuario, PASSWORD_DEFAULT);
 
     // Validación de nombre
-    if(strlen($nombre_usuario) > 40) 
+    if(strlen($nombre_usuario) < 10 || strlen($nombre_usuario) > 40) 
     {
-        echo "El nombre debe tener maximo 40 caracteres";
+        echo "El nombre debe tener entre 10 y 40 caracteres";
         exit;
     }
     // Validación de formato de correo electrónico
@@ -23,7 +29,9 @@ try {
         exit;
     }
     // Validación de número de teléfono
-    if(!preg_match('/^\d{9}$/', $telefono_usuario)) 
+    $telefono_usuario = str_replace("-", "", $telefono_usuario); // Eliminar guiones del número de teléfono
+
+    if(!preg_match('/^\d{9}$/', $telefono_usuario))
     {
         echo "Ingrese un número de teléfono válido de 9 dígitos";
         exit;
@@ -43,22 +51,29 @@ try {
         echo "- Contener al menos un número";
         exit;
     }
-    // Verificar que la contraseña y la confirmación coincidan
-    if($password_usuario !== $password_usuario_confirm) 
+    // Verificar si el correo electrónico ya existe en la base de datos
+    $sql_verificar = "SELECT COUNT(*) AS count FROM usuario WHERE Correo_Usu = :correo";
+    $stmt_verificar = $conn->prepare($sql_verificar);
+    $stmt_verificar->bindParam(':correo', $correo_usuario);
+    $stmt_verificar->execute();
+
+    $resultado = $stmt_verificar->fetch(PDO::FETCH_ASSOC);
+
+    if($resultado['count'] > 0) 
     {
-        echo "La contraseña y la confirmación no coinciden";
+        echo "El correo electrónico ya está registrado";
         exit;
     }
 
-    // Inserción en la base de datos si todas las validaciones son exitosas
-    $sql = "INSERT INTO usuario (Nombre_Usu, Contraseña_Usu, Correo_Usu, Telefono_Usu) VALUES (:nombre, :password, :correo, :telefono)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':nombre', $nombre_usuario);
-    $stmt->bindParam(':password', $password_usuario_hashed);
-    $stmt->bindParam(':correo', $correo_usuario);
-    $stmt->bindParam(':telefono', $telefono_usuario, PDO::PARAM_INT);
+    // Si el correo electrónico no existe, realizar la inserción en la base de datos
+    $sql_insertar = "INSERT INTO usuario (ID_Rol, Nombre_Usu, Contraseña_Usu, Correo_Usu, Telefono_Usu) VALUES (1, :nombre, :password, :correo, :telefono)";
+    $stmt_insertar = $conn->prepare($sql_insertar);
+    $stmt_insertar->bindParam(':nombre', $nombre_usuario);
+    $stmt_insertar->bindParam(':password', $password_usuario_hashed);
+    $stmt_insertar->bindParam(':correo', $correo_usuario);
+    $stmt_insertar->bindParam(':telefono', $telefono_usuario, PDO::PARAM_INT);
 
-    $stmt->execute();
+    $stmt_insertar->execute();
 
     echo "Inserción exitosa";
 } 

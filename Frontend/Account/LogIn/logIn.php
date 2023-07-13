@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h3>log In</h3> 
-        <form id="form" action="">
+        <form id="form" action="consulta_sign_in.php" method="post">
             <div class="form-div">
                 <ion-icon class="form-icon" name="mail"></ion-icon>
                 <div class="label-input-div">
